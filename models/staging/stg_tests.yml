@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_medewerker
+    description: "{{ doc('stg_medewerker') }}"
+    columns:
+      - name: medewerkerid
+        description: "Unieke ID van de medewerker"
+        tests:
+          - not_null
+          - unique
+
+      - name: geboortedatum
+        description: "geboortedatum van de medewerker "
+        tests:
+          - not_null
+
+      - name: geslacht
+        description: "Geslacht van de medewerker ('M' of 'V')"
+        tests:
+          - accepted_values:
+              values: ['M', 'V']
+              quote: true
+
+ 
+

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw_data              # Naam van de bron in dbt (vrij te kiezen)
+    schema: default             # Werkelijk schema in de database (bijv. in Databricks)
+    
+    tables:
+      - name: medewerker_data_raw         # Naam van de echte tabel in Databricks
+        description: "Originele medewerkersgegevens uit het bronsysteem"  # Beschrijving van de tabel
+
+

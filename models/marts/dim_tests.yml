@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_medewerker_final
+    description: "{{ doc('dim_medewerker_final') }}"
+    columns:
+      - name: medewerkerid
+        description: "Unieke ID van de medewerker"
+        tests:
+          - not_null
+          - unique
+
+      - name: dienstjaren
+        description: "Aantal jaren dat de medewerker in dienst is"
+        tests:
+          - not_null
+
+      - name: leeftijd
+        description: "Leeftijd van de medewerker in jaren"
+        tests:
+          - not_null
+
+      - name: werkstatus
+        description: "Status van de medewerker (heden / niet in dienst)"
+        tests:
+          - not_null
+      
+      - name: bijgewerkt_op
+        description: "upload tijd"
+        tests:
+          - not_null 

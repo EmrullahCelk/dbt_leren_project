@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: int_medewerker_dienstjaren
+    description: Aantal dienstjaren per medewerker 
+
+     "{{ doc('int_medewerker_models') }}"
+    columns:
+      - name: medewerkerid
+        description: Unieke ID van de medewerker
+        tests:
+          - not_null
+          - unique
+
+      - name: dienstjaren
+        description: Aantal jaren in dienst
+        tests:
+          - not_null
+
+  - name: int_medewerker_leeftijd
+    description: Leeftijd per medewerker berekend uit geboortedatum
+
+      "{{ doc('int_medewerker_models') }}"
+    columns:
+      - name: medewerkerid
+        description: "Unieke ID van de medewerker"
+        tests:
+          - not_null
+          - unique
+
+      - name: leeftijd
+        description: "Leeftijd in jaren"
+        tests:
+          - not_null
+
+  - name: int_medewerker_werkstatus
+    description: Berekende werkstatus van medewerkers gebaseerd op de datum van uitdiensttreding.
+
+      "{{ doc('int_medewerker_models') }}"
+    columns:
+      - name: medewerkerid
+        description: "Unieke ID van de medewerker"
+        tests:
+          - not_null
+          - unique
+
+      - name: werkstatus
+        description: "Beschrijving van de huidige werkstatus van de medewerker (bijv. 'heden' of 'niet in dienst')."
+        tests:
+          - not_null
+
+  - name: int_medewerker_bijgewerkt
+    description: Voegt een timestamp toe waarop de gegevens zijn bijgewerkt (`current_timestamp()`).
+
+      "{{ doc('int_medewerker_models') }}"
+    columns:
+      - name: medewerkerid
+        description: "Unieke ID van de medewerker"
+        tests:
+          - not_null
+          - unique
+
+      - name: bijgewerkt_op
+        description: "Tijdstip waarop de gegevens zijn toegevoegd of gewijzigd"
+        tests:
+          - not_null

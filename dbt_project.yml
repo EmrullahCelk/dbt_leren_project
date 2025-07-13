@@ -1,0 +1,13 @@
+name: "dbt_starter_project"
+version: "1.0"
+config-version: 2
+
+profile: "default"
+
+models:
+  dbt_starter_project:
+    +catalog: hive_metastore
+    +schema: default
+
+flags:
+  use_materialization_v2: true
